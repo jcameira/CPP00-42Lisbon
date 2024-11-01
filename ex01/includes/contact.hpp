@@ -1,8 +1,10 @@
-#ifndef CONTACT_CPP
-# define CONTACT_CPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <cstdlib>
+# include <iomanip>
+# include <utils.hpp>
 
 class	Contact {
 	public:
@@ -14,6 +16,11 @@ class	Contact {
 			std::string phone_number,
 			std::string darkest_secret);
 	~Contact();
+	std::string get_first_name() const;
+	std::string get_last_name() const;
+	std::string get_nickname() const;
+	std::string get_phone_number() const;
+	std::string get_darkest_secret() const;
 
 	private:
 

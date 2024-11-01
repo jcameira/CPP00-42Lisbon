@@ -1,5 +1,5 @@
-#ifndef PHONEBOOK_CPP
-# define PHONEBOOK_CPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include <contact.hpp>
 
@@ -15,6 +15,9 @@
 # define ADD_NICKNAME "Nickname: "
 # define ADD_PHONE_NUMBER "Phone Number: "
 # define ADD_DARKEST_SECRET "Your darkest secret: "
+# define NO_CONTACT_ADDED "Error: No contact added\n"
+
+# define TABLE_HEADER "_____________________________________________\n|Index     |First Name|Last Name |Nickname  |\n"
 
 enum commands {
 	ADD = 1,

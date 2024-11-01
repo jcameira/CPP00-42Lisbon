@@ -1,5 +1,16 @@
 #include <phonebook.hpp>
 
+int	check_eof( void )
+{
+	if (std::cin.eof())
+	{
+		std::cout << std::endl << NO_CONTACT_ADDED;
+		std::cin.clear();
+		return (1);
+	}
+	return (0);
+}
+
 void	handle_cmd ( commands cmd, PhoneBook phonebook ) {
 	switch ( cmd ) {
 		case ADD:
@@ -26,8 +37,13 @@ commands	get_command( void ) {
 
 	while ( true ) {
 		std::getline(std::cin, cmd);
-		if (std::cin.eof())
-			exit ( 0 );
+		if (std::cin.eof()) {
+			if (!std::cin)
+				exit ( 0 );
+			std::cin.clear();
+			std::cout << std::endl << INPUT_PROMPT;
+			continue ;
+		}
 		if ( !cmd.compare( "ADD" ) )
 			return ADD;
 		else if ( !cmd.compare( "SEARCH" ) )
@@ -44,12 +60,20 @@ commands	get_command( void ) {
 int main() {
 
 	PhoneBook phonebook;
-	commands cmd;
 
+	std::ios_base::sync_with_stdio(false);
 	while ( true ) {
 		show_menu();
-		cmd = get_command();
-		handle_cmd( cmd, phonebook );
+		switch ( get_command() ) {
+		case ADD:
+			phonebook.add_contact();
+			break;
+		case SEARCH:
+			phonebook.show_contacts();
+			break;
+		case EXIT:
+			exit ( 0 );
+		}
 	}
 	return 0;
 }
