@@ -11,6 +11,7 @@
 # define INPUT_PROMPT "> "
 # define EOF_DETECTED "EOF detected, the program will now exit"
 # define SEARCH_CONTACT "Write the index of the contact you would like to know more about: "
+# define USAGE "Write \\help if you want to know the possible commands"
 
 # define FIRST_NAME "First name: "
 # define LAST_NAME "Last name: "
@@ -28,6 +29,7 @@
 enum commands {
 	ADD = 1,
 	SEARCH,
+	HELP,
 	EXIT
 };
 
