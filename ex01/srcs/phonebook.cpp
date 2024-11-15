@@ -38,13 +38,17 @@ void	PhoneBook::add_contact( void ) {
 		std::getline( std::cin, phone_number );
 		if ( !phone_number.length() && !std::cin.eof() )
 			std::cout << EMPTY_FIELD << std::endl;
-		else
+		else {
+			bool	valid = true;
 			for ( int i = 0; i < ( int )phone_number.length(); i++ )
 				if ( !std::isdigit( phone_number[ i ] ) ) {
 					std::cout << INVALID_PHONE_NUMBER << std::endl;
-					continue ;
+					valid = false ;
+					break ;
 				}
-			break ;
+			if ( valid )
+				break ;
+		}
 	}
 	while ( !std::cin.eof() ) {
 		std::cout << DARKEST_SECRET;
