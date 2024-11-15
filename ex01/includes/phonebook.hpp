@@ -3,21 +3,27 @@
 
 # include <contact.hpp>
 
-# define MENU_INTRO "Enter one of the following commands (The commands are case sensitive).\n"
-# define MENU_ADD "ADD: Adds a contact to the phonebook.\n"
-# define MENU_SEARCH "SEARCH: Will display contact information.\n"
-# define MENU_EXIT "EXIT: Will exit the program.\n"
-# define INPUT_PROMPT ">"
-# define UNKNOWN_COMMAND "Please enter one of the possible commands.\n"
+# define MENU_INTRO "Enter one of the following commands (The commands are case sensitive)."
+# define MENU_ADD "ADD: Adds a contact to the phonebook."
+# define MENU_SEARCH "SEARCH: Will display contact information."
+# define MENU_EXIT "EXIT: Will exit the program."
+# define UNKNOWN_COMMAND "Please enter one of the possible commands."
+# define INPUT_PROMPT "> "
+# define EOF_DETECTED "EOF detected, the program will now exit"
+# define SEARCH_CONTACT "Write the index of the contact you would like to know more about: "
 
-# define ADD_FIRST_NAME "First name: "
-# define ADD_LAST_NAME "Last name: "
-# define ADD_NICKNAME "Nickname: "
-# define ADD_PHONE_NUMBER "Phone Number: "
-# define ADD_DARKEST_SECRET "Your darkest secret: "
-# define NO_CONTACT_ADDED "Error: No contact added\n"
+# define FIRST_NAME "First name: "
+# define LAST_NAME "Last name: "
+# define NICKNAME "Nickname: "
+# define PHONE_NUMBER "Phone Number: "
+# define DARKEST_SECRET "Darkest secret: "
 
-# define TABLE_HEADER "_____________________________________________\n|Index     |First Name|Last Name |Nickname  |\n"
+# define EMPTY_FIELD "Field can't be empty"
+# define INVALID_INDEX "Please write a valid contact index"
+# define INVALID_PHONE_NUMBER "Please write a valid phone number"
+# define NO_CONTACT "No contact available for the given index"
+
+# define TABLE_HEADER "_____________________________________________\n|Index     |First Name|Last Name |Nickname  |"
 
 enum commands {
 	ADD = 1,
@@ -37,6 +43,7 @@ class	PhoneBook {
 
 	private:
 
+	int		_num_c;
 	Contact _contacts[8];
 };
 

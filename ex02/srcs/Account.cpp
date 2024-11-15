@@ -9,6 +9,9 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
+Account::Account( void ){
+}
+
 Account::Account( int initial_deposit ){
 	Account::_totalAmount += initial_deposit;
 	this->_amount = initial_deposit;

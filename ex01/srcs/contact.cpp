@@ -1,7 +1,6 @@
 #include <contact.hpp>
 
-Contact::Contact( void ) {
-	std::cout << "Default\n";  
+Contact::Contact( void ) { 
 }
 
 Contact::Contact( std::string first_name,
@@ -15,7 +14,6 @@ Contact::Contact( std::string first_name,
 					_nickname( nickname ),
 					_phone_number( phone_number ),
 					_darkest_secret( darkest_secret ) {
-	std::cout << "Copy\n";
 }
 
 Contact::~Contact( void ) {
