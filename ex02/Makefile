@@ -11,10 +11,10 @@ INCLUDES			=	includes/
 DEFAULT_INCLUDES	=	-I /usr/local/includes
 
 SRCS_PATH			=	srcs/
-SRCS				=	$(wildcard $(SRCS_PATH)*.cpp)
+SRCS				=	Account.cpp tests.cpp
 
 OBJ_DIR 			= 	objects/
-OBJS 				= 	$(SRCS:$(SRCS_PATH)%.cpp=$(OBJ_DIR)%.o)
+OBJS 				= 	$(SRCS:%.cpp=$(OBJ_DIR)%.o)
 ALL_OBJECTS 		= 	$(OBJ_DIR)*.o
 
 TOTAL_SRCS			=	$(words $(SRCS))
